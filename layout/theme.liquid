@@ -40,6 +40,21 @@
     {%- endif -%}
 
     {{ content_for_header }}
+    {% for product in collection.products -%}
+      {{ product.title }}
+    {%- endfor %}
+    <h1>Test 2</h2>
+    <h3> ttt: {{ collection.products }}</h3>
+    {% for i in (1..5) %}
+      {{ i }}
+    {% endfor %}
+
+    {%- assign lower_limit = 20 -%}
+    {%- assign upper_limit = 25 -%}
+
+    {% for i in (lower_limit..upper_limit) -%}
+      {{ i }}
+    {%- endfor %}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
